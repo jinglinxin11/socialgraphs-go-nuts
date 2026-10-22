@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does network fame buy you more words? · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 5 · NLP I</p><h1>Does network fame buy you more words?</h1><p class="dek">Yes, but with steeply diminishing returns. The characters far off the trend show what in-degree misses: a brother who is famous in Britain, a hero lost in a court case, and a codename that several people share.</p><h2>The question</h2>
+<p>The first half of the course measured fame with links: in-degree is how many Marvel pages point at you. The text half gives us a second yardstick, <strong>how many words Wikipedia spends on you</strong>. Do the two agree? And where they disagree, what is going on?</p>
+<h2>What we did</h2>
+<ul>
+<li>Tokenised all 303 pages (lower-case, letters and digits, apostrophes kept inside words) and counted tokens per page.</li>
+<li>Plotted words against in-degree + 1 on log–log axes. The +1 keeps the 58 characters with no in-links on the plot.</li>
+<li>Fitted a straight line in log–log space and ranked every character by its <em>residual</em>: how many times more (or fewer) words they have than their in-degree predicts.</li>
+</ul>
+<h2>The relationship</h2>
+<p><img alt="Words on the page vs in-degree" src="assets/week5/fame_vs_words.png" /></p>
+<ul>
+<li>Spearman ρ = <strong>0.75</strong>: famous characters clearly do get longer pages.</li>
+<li>The slope is <strong>0.72</strong>, i.e. words ∝ (k_in + 1)^0.72. That is <em>sublinear</em>: ten times more in-links buys about five times more text.</li>
+<li>R² = 0.59 on log scales, so a lot is left unexplained. The median page has 1,258 words, and the range runs from 195 (Helix) to 14,295 (Scarlet Witch).</li>
+</ul>
+<h2>Far above the line: more words than links</h2>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>in-degree</th>
+<th>words</th>
+<th>× predicted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brian Braddock</td>
+<td>1</td>
+<td>7,402</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>Miracleman</td>
+<td>0</td>
+<td>4,425</td>
+<td>7.9</td>
+</tr>
+<tr>
+<td>Betsy Braddock</td>
+<td>7</td>
+<td>13,210</td>
+<td>5.2</td>
+</tr>
+<tr>
+<td>U.S. Agent</td>
+<td>6</td>
+<td>9,754</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td>Isaiah Bradley</td>
+<td>0</td>
+<td>2,076</td>
+<td>3.7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>We read the pages:</strong></p>
+<ul>
+<li><strong>Brian Braddock</strong> is Captain Britain. His only in-link inside the category comes from his twin sister Betsy. His long page is about British comics (Excalibur, MI-13, "champion of the British Isles"). He is famous in a part of the Marvel universe that this category barely touches.</li>
+<li><strong>Miracleman</strong> is linked by nobody here. His page is long because of his <em>real-world</em> history: a British character caught in a decades-long legal dispute over who owned him, before Marvel brought him back in 2010. That is fame in publishing history, not in the story world.</li>
+<li><strong>U.S. Agent</strong> and <strong>Isaiah Bradley</strong> both have Marvel Cinematic Universe roles (<em>The Falcon and the Winter Soldier</em>), and their pages carry long film and TV sections.</li>
+</ul>
+<h2>Far below the line: links without words</h2>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>in-degree</th>
+<th>words</th>
+<th>× predicted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quasar</strong></td>
+<td><strong>24</strong></td>
+<td><strong>1,033</strong></td>
+<td><strong>0.18</strong></td>
+</tr>
+<tr>
+<td>Blue Bullet</td>
+<td>2</td>
+<td>333</td>
+<td>0.27</td>
+</tr>
+<tr>
+<td>Ch'od</td>
+<td>4</td>
+<td>515</td>
+<td>0.29</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quasar</strong> is the most interesting point on the plot (and the odd one from week 1, with 24 in-links and 3 out). His page begins <em>"Quasar is the name of several superheroes"</em>. It is an <strong>umbrella page for a codename</strong> shared by Wendell Vaughn, Phyla-Vell, Richard Rider and Avril Kincaid. Each of them gets a paragraph or two. Two dozen pages link to "Quasar", but the text is divided between four people. Links pile up on the <em>name</em>. The words do not.</p>
+<h2>Where do the extra words go?</h2>
+<p><img alt="Share of words in media sections, by in-degree" src="assets/week5/media_share.png" /></p>
+<p>We split each page at its section headings and measured the share of words under <em>In other media / Film / Television / Video games</em>. The median share rises from <strong>0%</strong> for characters with no in-links to <strong>7%</strong> for characters with 10 or more. That is a real trend, but small: most of the extra length of a famous page is still comic-book biography.</p>
+<h2>Limitation</h2>
+<p>Our section splitter is a heuristic (a short capitalised line with no full stop counts as a heading). It works on the pages we inspected, but it will occasionally treat a one-line sentence as a heading. More importantly, page length measures <em>Wikipedia editors' attention</em>, which follows films and fandom as much as story importance.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

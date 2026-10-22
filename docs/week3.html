@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taking the Marvel universe apart · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 3 · Who matters, and why</p><h1>Taking the Marvel universe apart</h1><p class="dek">Everyone is at most four clicks from Spider-Man. But to break the network you have to remove far more than Spider-Man, and the order you remove characters in matters more than which centrality you pick.</p><h2>Two questions</h2>
+<ol>
+<li><strong>Six degrees of Spider-Man.</strong> How far is every character from the most-linked page, and who is the farthest?</li>
+<li><strong>Which removals break the network?</strong> If we delete characters one at a time, ranked by some centrality, how fast does the giant component fall apart? And does it matter which centrality we use?</li>
+</ol>
+<h2>Six degrees of Spider-Man (it's really four)</h2>
+<p><img alt="Distance to Spider-Man" src="assets/week3/spidey_distance.png" /></p>
+<p>Ignoring direction, every character in the giant component is <strong>at most 3 steps</strong> from Spider-Man, and the average is <strong>1.68</strong>. If you follow links only in their direction (<em>can you click your way to Spider-Man?</em>), the average rises a little to 1.72 and the maximum becomes 4.</p>
+<ul>
+<li>The longest directed chain is <strong>Mahr Vehl → Genis-Vell → Captain Marvel → Machine Man → Spider-Man</strong>. It is a walk through the cosmic Kree corner of Marvel, a long way from Queens.</li>
+<li>The farthest by undirected distance is the western gunslinger <strong>Kid Colt → Black Rider → Doctor Strange → Spider-Man</strong>.</li>
+<li><strong>Three characters in the giant component can never click their way to Spider-Man:</strong> Peggy Carter, Synapse and The Witness. Other pages link <em>to</em> them, but every path <em>out</em> of them dead-ends.</li>
+</ul>
+<h2>Taking it apart</h2>
+<p>We removed up to 120 characters in four different orders and tracked the share of all 303 that stays in the largest component:</p>
+<ul>
+<li>by <strong>degree</strong>,</li>
+<li>by <strong>betweenness</strong> (computed once on the full network),</li>
+<li>by <strong>PageRank</strong> on the directed network,</li>
+<li>by <strong>betweenness, recomputed after every removal</strong> (the "adaptive" attack),</li>
+</ul>
+<p>against <strong>30 random removal orders</strong> (grey band).</p>
+<p><img alt="Giant component vs characters removed" src="assets/week3/attack.png" /></p>
+<table>
+<thead>
+<tr>
+<th>order</th>
+<th>removals until giant component &lt; 50%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>random (median of 30)</td>
+<td>not reached within 120</td>
+</tr>
+<tr>
+<td>PageRank</td>
+<td>79</td>
+</tr>
+<tr>
+<td>degree</td>
+<td>78</td>
+</tr>
+<tr>
+<td>betweenness (static)</td>
+<td>74</td>
+</tr>
+<tr>
+<td><strong>betweenness (recomputed)</strong></td>
+<td><strong>60</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>What surprised us</h2>
+<p><strong>The network is tough.</strong> Removing Spider-Man, Hulk, Wolverine and Doctor Strange together barely dents it. After 20 targeted removals the giant component still holds about <strong>79%</strong> of all characters (85% under random removal). This is not a hub-and-spoke network where cutting the centre leaves loose ends. Marvel is held together by many overlapping team rosters.</p>
+<p><strong>The three static centralities are almost indistinguishable.</strong> Degree, betweenness and PageRank largely agree on who is important (Spider-Man, Hulk, Wolverine and Doctor Strange top all three lists). They only diverge after about 80 removals, by which point the network has already fallen apart.</p>
+<p><strong>Recomputing beats choosing a smarter measure.</strong> The adaptive attack does not win by picking a better first target; its first five removals are the same top hubs. It wins after about 50 removals, when it finds characters that have <em>become</em> bridges because their neighbours are gone. The cliff in the red curve is removal <strong>#53: Leech</strong>, a minor Morlock mutant with in-degree 2. Once the hubs around him are gone, he is the only thing holding 25 characters to the rest. Removal #74 (<strong>Sabra</strong>) does the same to a cosmic cluster that includes Star-Lord, Hyperion, Gladiator and the Eternals. Nobody would rank Leech or Sabra as "important" on the full network. Their importance only appears once the hubs are removed.</p>
+<p>The first ten characters the adaptive attack removes are Spider-Man, Hulk, Wolverine, Doctor Strange, Deadpool, She-Hulk, Hercules, Phoenix Force, Cloak and Dagger, and Black Panther.</p>
+<h2>What we checked</h2>
+<ul>
+<li>That the 30 random orders were not all identical (the grey band has visible width).</li>
+<li>PageRank uses the <em>directed</em> network, so its top list includes Black Cat, Mayday Parker and Venom: characters that Spider-Man links to. This makes sense, because PageRank passes on importance along out-links, and Spider-Man spends his on his own family (see week 1).</li>
+</ul>
+<h2>Limitation</h2>
+<p>"Breaking the network" is a thought experiment here. Deleting a character from Wikipedia would not delete the links <em>between</em> the remaining characters that went through them in the stories. Removal measures how much the <em>link structure</em> depends on a node, not how much the Marvel universe does.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

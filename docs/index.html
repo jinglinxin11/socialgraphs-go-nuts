@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<section class="hero"><h1>Marvel, Mined</h1><p>Weekly “Go nuts” posts for 02805 Social Graphs and Interactions, DTU, autumn 2026. One question per week, asked of the same 303 Marvel superheroes (and, in week 4, 1,444 philosophers).</p></section><section class="cards"><a class="card" href="week7.html"><span class="kicker">Week 7 · NLP III</span><h2>Can text build the Marvel network?</h2><p>We rebuilt the network from name mentions alone and got 77% of the hyperlinks back. The edges that exist in only one network come down to umbrella pages, comic-book titles and names that are also English words.</p><img src="assets/week7/overlap.png" alt="" loading="lazy"></a>
+<a class="card" href="week6.html"><span class="kicker">Week 6 · NLP II</span><h2>Close in text, far in the network</h2><p>TF-IDF says pages that link to each other read alike. The pairs that read alike without linking turn out to share a team, a resurrection or a writer, and removing character names does not remove the writers.</p><img src="assets/week6/cosine_by_distance.png" alt="" loading="lazy"></a>
+<a class="card" href="week5.html"><span class="kicker">Week 5 · NLP I</span><h2>Does network fame buy you more words?</h2><p>Yes, but with steeply diminishing returns. The characters far off the trend show what in-degree misses: a brother who is famous in Britain, a hero lost in a court case, and a codename that several people share.</p><img src="assets/week5/fame_vs_words.png" alt="" loading="lazy"></a>
+<a class="card" href="week4.html"><span class="kicker">Week 4 · Communities &amp; backbones</span><h2>Do weights change the history of philosophy?</h2><p>We ran Louvain on 1,374 philosophers ten times with link weights and ten times without. Weighting changes the partition less than the random seed does, but a handful of philosophers move for good reasons.</p><img src="assets/week4/era_heatmap.png" alt="" loading="lazy"></a>
+<a class="card" href="week3.html"><span class="kicker">Week 3 · Who matters, and why</span><h2>Taking the Marvel universe apart</h2><p>Everyone is at most four clicks from Spider-Man. But to break the network you have to remove far more than Spider-Man, and the order you remove characters in matters more than which centrality you pick.</p><img src="assets/week3/attack.png" alt="" loading="lazy"></a>
+<a class="card" href="week2.html"><span class="kicker">Week 2 · Models &amp; null models</span><h2>What survives the shuffle?</h2><p>We rewired the Marvel network 200 times while keeping every character&#x27;s degrees fixed. Reciprocity dies, triangles don&#x27;t, and one &quot;significant&quot; result turned out to be the same finding counted twice.</p><img src="assets/week2/shuffle_test.png" alt="" loading="lazy"></a>
+<a class="card" href="week1.html"><span class="kicker">Week 1 · Networks</span><h2>Famous is not the same as chatty</h2><p>In the Marvel network, the characters everyone links to and the characters who link to everyone are almost entirely different people. And 26 heroes are not connected to the rest at all.</p><img src="assets/week1/in_vs_out.png" alt="" loading="lazy"></a></section>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

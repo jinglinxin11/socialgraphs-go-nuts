@@ -1,0 +1,299 @@
+{
+  "aliases_example": {
+    "Spider-Man": [
+      "Spider-Man"
+    ],
+    "Hulk": [
+      "Hulk"
+    ],
+    "Abomination": [
+      "Abomination",
+      "Emil Blonsky"
+    ],
+    "Storm": []
+  },
+  "no_usable_alias": [
+    "Blade",
+    "Bug",
+    "Captain Marvel (Khn'nr)",
+    "Force",
+    "Gargoyle",
+    "Gladiator (Kallark)",
+    "Gorgon (Inhuman)",
+    "Human Torch (android)",
+    "Jean Grey (X-Men film series)",
+    "Magician",
+    "Outlaw",
+    "Oya",
+    "She-Hulk (Lyra)",
+    "Solo",
+    "Spider-Man (Marvel Mangaverse)",
+    "Storm",
+    "Surge",
+    "Venom",
+    "White Tiger (Heroes for Hire)"
+  ],
+  "alias_collisions": {
+    "Peter Parker": [
+      "Spider-Man (Marvel Mangaverse)",
+      "Spider-Man Noir"
+    ]
+  },
+  "n_link_edges": 1784,
+  "n_mention_edges": 1843,
+  "both": 1369,
+  "only_link": 415,
+  "only_text": 474,
+  "jaccard": 0.606,
+  "share_links_recovered": 0.767,
+  "share_mentions_linked": 0.743,
+  "link_missed_target_has_no_alias": 104,
+  "p_linked_by_mentions": {
+    "1": 0.695,
+    "2": 0.682,
+    "3": 0.813,
+    "4": 0.85,
+    "5": 0.824,
+    "6": 0.826,
+    "7": 0.692,
+    "8": 0.909,
+    "9": 0.941,
+    "10": 0.932
+  },
+  "strong_text_only": [
+    [
+      "Mockingbird",
+      "Hawkeye",
+      45,
+      "…e going on to be a member of several Avengers teams, briefly marrying and subsequently divorcing Clint Barton/Hawkeye. Mockingbird has been described as one of Marvel's most notable female heroes. In media set in the Marvel Cin…"
+    ],
+    [
+      "Agent X",
+      "Deadpool",
+      36,
+      "…l Simone and UDON.   Publication history Agent X was born out of experiments with Marvel Comics' long-running Deadpool series, including the \"miniseries within a series,\" (Deadpool: Agent of Weapon X and Deadpool: Funeral for a …"
+    ],
+    [
+      "Spider-Woman (Jessica Drew)",
+      "Spider-Man",
+      28,
+      "…as been described as one of Marvel's most notable and powerful female heroes. She made her cinematic debut in Spider-Man: Across the Spider-Verse (2023) as Jess Drew, voiced by Issa Rae.   Concept and creation Marvel Comics' then-…"
+    ],
+    [
+      "Toro",
+      "Human Torch",
+      14,
+      "…in Timely Comics and later published as a Marvel Comics superhero who appeared as the partner of the original Human Torch.   Publication history Toro made his debut in Timely Comics' Human Torch Comics #2 (premiering fall 1940 with…"
+    ],
+    [
+      "Captain Universe",
+      "Enigma",
+      13,
+      "…tempt to fulfill his destiny, as seen in The Amazing Spider-Man #627–629.   Fictional character biography The Enigma Force, or the God of Light, was created by the Celestials as a reaction to Knull. The Uni-Power is an extra-d…"
+    ],
+    [
+      "Hellion",
+      "Wolverine",
+      13,
+      "…ekinetically control his prosthetic hands. He returned to Westchester and joined the Jean Grey Academy led by Wolverine. After the \"Secret Wars\" storyline, Hellion comes into contact with the Terrigen Mist and nearly dies of M-Po…"
+    ],
+    [
+      "Black Widow (Natasha Romanova)",
+      "Hawkeye",
+      12,
+      "…lue bodysuit made primarily of fishnet-style webbing, a cape, and a mask designed to resemble the one used by Hawkeye. With the costume came her first use of tactical equipment, including gloves that let her adhere to walls and…"
+    ],
+    [
+      "U.S. Agent",
+      "Hawkeye",
+      12,
+      "…om Steve Rogers' suit. Like some West Coast Avengers teammates who had their own series (such as Iron Man, or Hawkeye in Solo Avengers), the character U.S. Agent was popular enough to support his own limited series in 1993. The…"
+    ],
+    [
+      "Morbius",
+      "Ghost Rider",
+      11,
+      "… purpose of which was to launch a new line of horror- and supernatural-themed comics following the success of Ghost Rider (vol. 3). \"Rise of the Midnight Sons\" featured the new Ghost Rider (Danny Ketch) and Johnny Blaze (the previo…"
+    ],
+    [
+      "Scarlet Witch",
+      "Hawkeye",
+      10,
+      "…s from other comics who did not have a series of their own: the Scarlet Witch and Quicksilver from X-Men, and Hawkeye from Iron Man's adventures in Tales of Suspense. The team was known as \"Cap's Kooky Quartet\". Although common…"
+    ],
+    [
+      "Miracleman",
+      "Captain Marvel",
+      9,
+      "…tles in 1953, British publisher L. Miller & Son were left with the prospect of having to cancel their popular Captain Marvel and Captain Marvel Jr. weeklies due to a lack of material. Len Miller contacted Mick Anglo, whose Gower Stree…"
+    ],
+    [
+      "Hornet",
+      "Spider-Woman",
+      8,
+      "…nal character biography   Scotty McDowell  Scotty McDowell is a wheelchair-using criminologist who assists in Spider-Woman's cases. He is kidnapped by mad scientist Karl Malus, who injects him with a formula containing insect DNA. H…"
+    ]
+  ],
+  "only_link_sample": [
+    [
+      "Abomination",
+      "Gargoyle",
+      []
+    ],
+    [
+      "Adam Warlock",
+      "Black Widow (Natasha Romanova)",
+      [
+        "Natasha Romanova"
+      ]
+    ],
+    [
+      "Adam Warlock",
+      "Gladiator (Kallark)",
+      []
+    ],
+    [
+      "Agent X",
+      "Outlaw",
+      []
+    ],
+    [
+      "Ajak",
+      "Thena",
+      [
+        "born Azura"
+      ]
+    ],
+    [
+      "Alex Wilder",
+      "Chase Stein",
+      [
+        "Chase Stein",
+        "also known as Talkback"
+      ]
+    ],
+    [
+      "Anne Weying",
+      "Deadpool",
+      [
+        "Deadpool"
+      ]
+    ],
+    [
+      "Anne Weying",
+      "Venom",
+      []
+    ],
+    [
+      "Anya Corazon",
+      "Mayday Parker",
+      [
+        "May \"Mayday\" Parker",
+        "Mayday Parker"
+      ]
+    ],
+    [
+      "Anya Corazon",
+      "Phil Urich",
+      [
+        "Phil Urich"
+      ]
+    ],
+    [
+      "Anya Corazon",
+      "Power Man (Victor Alvarez)",
+      [
+        "Victor Alvarez"
+      ]
+    ],
+    [
+      "Anya Corazon",
+      "Spider-Woman (Jessica Drew)",
+      [
+        "Jessica Drew"
+      ]
+    ],
+    [
+      "Arabian Knight",
+      "Storm",
+      []
+    ],
+    [
+      "Arabian Knight",
+      "Union Jack (Joseph Chapman)",
+      [
+        "Joseph \"Joey\" Chapman",
+        "Joseph Chapman"
+      ]
+    ],
+    [
+      "Ares",
+      "Balder the Brave",
+      [
+        "Balder the Brave"
+      ]
+    ]
+  ],
+  "talked_not_linked": [
+    [
+      "Hawkeye",
+      0,
+      43
+    ],
+    [
+      "Thunderbolt",
+      0,
+      10
+    ],
+    [
+      "Enigma",
+      0,
+      3
+    ],
+    [
+      "Captain Marvel",
+      9,
+      36
+    ],
+    [
+      "Ogre",
+      0,
+      2
+    ],
+    [
+      "Spider-Woman",
+      10,
+      32
+    ],
+    [
+      "Black Knight",
+      4,
+      13
+    ],
+    [
+      "Red Raven",
+      2,
+      7
+    ]
+  ],
+  "corr_in": 0.908,
+  "text_components": 17,
+  "text_isolates": [
+    "Baymax",
+    "Bird-Brain",
+    "Black Fox (Robert Paine)",
+    "Brain Drain",
+    "Captain Midlands",
+    "Charcoal",
+    "Force",
+    "Happy Sam Sawyer",
+    "Hellfire (J. T. Slade)",
+    "Illuminator",
+    "Moonglow",
+    "Sean and Chris",
+    "Solarman",
+    "Super Rabbit",
+    "The Witness",
+    "Yo-Yo Rodriguez"
+  ]
+}

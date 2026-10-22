@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Close in text, far in the network · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 6 · NLP II</p><h1>Close in text, far in the network</h1><p class="dek">TF-IDF says pages that link to each other read alike. The pairs that read alike without linking turn out to share a team, a resurrection or a writer, and removing character names does not remove the writers.</p><h2>The question</h2>
+<p>Week 3 gave us one notion of "close": network distance. This week gave us another: <strong>TF-IDF cosine similarity</strong> between Wikipedia pages. We asked how much the two agree, and specifically: <strong>which characters are close in text but far apart in the network, and why?</strong></p>
+<p>The week page warned us about one trap. TF-IDF put Storm next to the Human Torch because the Human Torch is <em>Johnny Storm</em>. A rare surname is a very strong TF-IDF feature. So we ran everything twice: once on all words, and once with <strong>625 character-name tokens removed</strong>. The names come from page titles plus the real names in the node blurbs ("Abomination (Emil Blonsky)"), minus generic words like <em>man</em>, <em>captain</em> or <em>black</em>.</p>
+<h2>Setup</h2>
+<ul>
+<li><code>TfidfVectorizer</code> with English stop words, sublinear TF, min_df = 2, max_df = 0.5. That gives 15,388 terms (14,910 without names).</li>
+<li>Cosine similarity for all 45,753 pairs.</li>
+<li>Undirected shortest-path distance for every pair (or "no path").</li>
+</ul>
+<h2>Text similarity fades with distance</h2>
+<p><img alt="Cosine similarity by network distance" src="assets/week6/cosine_by_distance.png" /></p>
+<table>
+<thead>
+<tr>
+<th>network distance</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>no path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>median cosine, all words</td>
+<td>0.144</td>
+<td>0.076</td>
+<td>0.046</td>
+<td>0.032</td>
+<td>0.031</td>
+</tr>
+<tr>
+<td>median cosine, no names</td>
+<td>0.136</td>
+<td>0.076</td>
+<td>0.048</td>
+<td>0.034</td>
+<td>0.033</td>
+</tr>
+</tbody>
+</table>
+<p>Linked pages read about <strong>twice as alike</strong> as pages two steps apart. By distance 4, text similarity is as low as for characters with no path at all.</p>
+<p>Removing names lowers the similarity of <em>directly linked</em> pairs a little (0.144 → 0.136). Neighbours mention each other by name, so part of their similarity is just "you say my name, I say yours". At larger distances, names make no difference.</p>
+<h2>Close in text, far in the network</h2>
+<p>After removing names, these are the most similar pairs at distance ≥ 3:</p>
+<table>
+<thead>
+<tr>
+<th>pair</th>
+<th>distance</th>
+<th>cosine</th>
+<th>top shared terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blue Eagle / Moonglow</td>
+<td>3</td>
+<td>0.31</td>
+<td>squadron, supreme, overmind, redeemers</td>
+</tr>
+<tr>
+<td>Happy Sam Sawyer / Junior Juniper</td>
+<td>no path</td>
+<td>0.26</td>
+<td>sgt, howling, commandos, fury, kirby</td>
+</tr>
+<tr>
+<td>Backhand / Scatterbrain</td>
+<td>4</td>
+<td>0.26</td>
+<td>strikeforce, hordians, <strong>brent, gillis, anderson</strong></td>
+</tr>
+<tr>
+<td>Balder the Brave / Beta Ray Bill</td>
+<td>3</td>
+<td>0.24</td>
+<td>asgardians, odin, asgard, surtur</td>
+</tr>
+<tr>
+<td><strong>Jean Grey / Mockingbird</strong></td>
+<td>3</td>
+<td>0.23</td>
+<td><strong>busiek</strong>, story's, conclusion, <strong>wein</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Three different reasons:</strong></p>
+<ol>
+<li><strong>Same team, no links.</strong> Blue Eagle and Moonglow are both in the <em>Squadron Supreme</em>. Happy Sam Sawyer and Junior Juniper both served in <em>Sgt. Fury and his Howling Commandos</em> (1963). Sawyer is one of the week-1 isolates: no Marvel page links to him and he links to no one, but his text puts him right next to his old unit. This is real structure that the hyperlinks miss.</li>
+<li><strong>Same writer.</strong> The Strikeforce: Morituri pairs share <strong>brent, gillis, anderson</strong>: Peter B. Gillis and Brent Anderson, the team that created them. Our name filter removed <em>character</em> names, but <em>creator</em> names are just as rare and just as strong in TF-IDF.</li>
+<li><strong>Same plot device.</strong> Jean Grey and Mockingbird read alike because of <strong>Kurt Busiek</strong>. We went back to the text: Busiek is credited with <em>devising the plot to revive Jean Grey</em>, and in 1998 he <em>briefly revived</em> Mockingbird in <em>Avengers</em> vol. 3. Two heroines with nothing else in common share a resurrection writer.</li>
+</ol>
+<h2>How much was only names?</h2>
+<p><img alt="Cosine with names vs without" src="assets/week6/names_vs_story.png" /></p>
+<p>Pairs well below the diagonal were similar only because they share names. Mostly these are <strong>legacy codenames</strong>:</p>
+<ul>
+<li><strong>Nomad</strong>, Jack Monroe, Rikki Barnes and Bucky: 0.26 → 0.15. Several people have held the Nomad and Bucky identities, and their pages are full of each other's names.</li>
+<li><strong>Guardian / Vindicator</strong>: James and Heather <em>Hudson</em>, a married couple.</li>
+<li><strong>Hawkeye / Ronin</strong>: both pages are about <em>Clint Barton</em>.</li>
+</ul>
+<p>These pairs are all directly linked (distance 1), so the network already knew. Removing names showed that their text similarity was mostly that shared vocabulary.</p>
+<h2>Limitation</h2>
+<p>Our "names removed" version is not name-free: creator names (Gillis, Busiek, Kirby, Liefeld) and team names (Morituri, Squadron) survive, and they drive the strongest similarities. A next step would be to remove <em>every</em> proper noun (with a named-entity tagger) and check what is left. We suspect it would be much closer to "story" similarity, and much weaker.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

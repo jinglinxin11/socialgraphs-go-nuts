@@ -1,0 +1,81 @@
+{
+  "shuffle": {
+    "reciprocity": {
+      "real": 0.3924,
+      "null_mean": 0.0633,
+      "null_sd": 0.0072,
+      "z": 45.7,
+      "p_ge": 0.0
+    },
+    "triangles": {
+      "real": 1839,
+      "null_mean": 1879.82,
+      "null_sd": 58.1847,
+      "z": -0.7,
+      "p_ge": 0.755
+    },
+    "transitivity": {
+      "real": 0.1825,
+      "null_mean": 0.1345,
+      "null_sd": 0.0038,
+      "z": 12.5,
+      "p_ge": 0.0
+    },
+    "in_in_assortativity": {
+      "real": -0.0067,
+      "null_mean": -0.045,
+      "null_sd": 0.0153,
+      "z": 2.5,
+      "p_ge": 0.0
+    },
+    "giant_share": {
+      "real": 0.9142,
+      "null_mean": 0.9142,
+      "null_sd": 0.0,
+      "z": -1.0,
+      "p_ge": 1.0
+    }
+  },
+  "n_shuffles": 200,
+  "undirected_edges_real": 1434,
+  "paradox_share": 0.874,
+  "n_with_friends": 286,
+  "mean_k": 10.03,
+  "mean_k_of_neighbour": 22.08,
+  "local_kings": [
+    [
+      "Spider-Man",
+      106
+    ],
+    [
+      "Radian (Morituri)",
+      6
+    ]
+  ],
+  "popular_friends": [
+    [
+      "Spider-Man",
+      106
+    ],
+    [
+      "Hulk",
+      33
+    ],
+    [
+      "Wolverine",
+      19
+    ],
+    [
+      "Doctor Strange",
+      14
+    ],
+    [
+      "Deadpool",
+      9
+    ],
+    [
+      "She-Hulk",
+      8
+    ]
+  ]
+}

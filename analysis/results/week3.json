@@ -1,0 +1,164 @@
+{
+  "spidey_mean_dist_undirected": 1.68,
+  "spidey_mean_dist_directed": 1.72,
+  "hist_undirected": [
+    1,
+    106,
+    152,
+    18
+  ],
+  "hist_directed": [
+    1,
+    106,
+    141,
+    23,
+    3
+  ],
+  "reach_spidey_directed": 273,
+  "giant_cant_reach_spidey": [
+    "Peggy Carter",
+    "Synapse",
+    "The Witness"
+  ],
+  "farthest_directed_chain": [
+    "Mahr Vehl",
+    "Genis-Vell",
+    "Captain Marvel",
+    "Machine Man",
+    "Spider-Man"
+  ],
+  "farthest_undirected_chain": [
+    "Kid Colt",
+    "Black Rider",
+    "Doctor Strange",
+    "Spider-Man"
+  ],
+  "top_betweenness": [
+    [
+      "Spider-Man",
+      0.196
+    ],
+    [
+      "Hulk",
+      0.088
+    ],
+    [
+      "Wolverine",
+      0.077
+    ],
+    [
+      "Doctor Strange",
+      0.069
+    ],
+    [
+      "Deadpool",
+      0.047
+    ],
+    [
+      "She-Hulk",
+      0.033
+    ],
+    [
+      "Hercules",
+      0.031
+    ],
+    [
+      "Black Widow (Natasha Romanova)",
+      0.029
+    ]
+  ],
+  "top_degree": [
+    [
+      "Spider-Man",
+      106
+    ],
+    [
+      "Hulk",
+      65
+    ],
+    [
+      "Wolverine",
+      63
+    ],
+    [
+      "Doctor Strange",
+      57
+    ],
+    [
+      "Deadpool",
+      41
+    ],
+    [
+      "She-Hulk",
+      37
+    ],
+    [
+      "Phoenix Force",
+      32
+    ],
+    [
+      "Scarlet Witch",
+      32
+    ]
+  ],
+  "top_pagerank": [
+    [
+      "Spider-Man",
+      0.0501
+    ],
+    [
+      "Hulk",
+      0.028
+    ],
+    [
+      "Wolverine",
+      0.0259
+    ],
+    [
+      "Doctor Strange",
+      0.0207
+    ],
+    [
+      "Black Cat",
+      0.0176
+    ],
+    [
+      "Deadpool",
+      0.0148
+    ],
+    [
+      "Mayday Parker",
+      0.0143
+    ],
+    [
+      "Venom",
+      0.0137
+    ]
+  ],
+  "removals_to_halve_giant": {
+    "degree": 78,
+    "betweenness": 74,
+    "PageRank (directed)": 79,
+    "betweenness, recomputed": 60
+  },
+  "removals_to_halve_giant_random_median": 999,
+  "adaptive_first_10": [
+    "Spider-Man",
+    "Hulk",
+    "Wolverine",
+    "Doctor Strange",
+    "Deadpool",
+    "She-Hulk",
+    "Hercules",
+    "Phoenix Force",
+    "Cloak and Dagger (characters)",
+    "Black Panther"
+  ],
+  "giant_after_20": {
+    "degree": 0.792,
+    "betweenness": 0.795,
+    "PageRank (directed)": 0.789,
+    "betweenness, recomputed": 0.785
+  },
+  "giant_after_20_random_mean": 0.85
+}

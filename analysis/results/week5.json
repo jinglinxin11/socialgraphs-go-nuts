@@ -1,0 +1,182 @@
+{
+  "slope": 0.724,
+  "r2": 0.59,
+  "spearman": 0.751,
+  "median_words": 1258,
+  "min_words": [
+    "Helix",
+    195
+  ],
+  "max_words": [
+    "Scarlet Witch",
+    14295
+  ],
+  "above": [
+    [
+      "Brian Braddock",
+      1,
+      7402,
+      8.0
+    ],
+    [
+      "Miracleman",
+      0,
+      4425,
+      7.9
+    ],
+    [
+      "Betsy Braddock",
+      7,
+      13210,
+      5.2
+    ],
+    [
+      "U.S. Agent",
+      6,
+      9754,
+      4.2
+    ],
+    [
+      "Isaiah Bradley",
+      0,
+      2076,
+      3.7
+    ],
+    [
+      "Gwenpool",
+      6,
+      7969,
+      3.5
+    ],
+    [
+      "Eddie Brock",
+      11,
+      10663,
+      3.1
+    ],
+    [
+      "Beta Ray Bill",
+      2,
+      3873,
+      3.1
+    ]
+  ],
+  "below": [
+    [
+      "Quasar",
+      24,
+      1033,
+      0.18
+    ],
+    [
+      "Blue Bullet",
+      2,
+      333,
+      0.27
+    ],
+    [
+      "Ch'od",
+      4,
+      515,
+      0.29
+    ],
+    [
+      "Lei Kung",
+      3,
+      458,
+      0.3
+    ],
+    [
+      "Toxyn",
+      3,
+      479,
+      0.31
+    ],
+    [
+      "Korvus",
+      3,
+      495,
+      0.32
+    ],
+    [
+      "Nomad",
+      5,
+      691,
+      0.34
+    ],
+    [
+      "Synapse",
+      2,
+      420,
+      0.34
+    ]
+  ],
+  "media_share_median_by_bin": {
+    "0": 0.0,
+    "1–2": 0.018,
+    "3–9": 0.033,
+    "10+": 0.071
+  },
+  "peek_above": {
+    "Brian Braddock": "As Captain Britain, Brian was empowered by the legendary magician Merlyn and his daughter Roma and assigned to be the champion of the British Isles and its peoples, as well as the defender of Earth-616 as a member of the multiversal Captain",
+    "Miracleman": "After a 15-year hiatus brought on by a legal dispute over the character's ownership, the character was successfully brought back into print by Marvel Comics in 2010, initially presenting classic material under the Marvelman name. From 2014 ",
+    "Betsy Braddock": "Betsy was redesigned in a 1989 story written by Claremont and illustrated by Jim Lee as a Japanese assassin with ninja skills and the ability to manifest her telepathy in the form of various weapons, most notably a \"psychic knife\", and this",
+    "U.S. Agent": "Wyatt Russell portrays John Walker in the Marvel Cinematic Universe, starting with the streaming television series The Falcon and the Winter Soldier (2021) and the film Thunderbolts* (2025). He will reprise the role in Avengers: Doomsday (2"
+  },
+  "peek_below": {
+    "Quasar": "Fictional character biography Wendell Vaughn",
+    "Blue Bullet": "Creation The character was created as an homage to the Fawcett comics character Bullet Man.",
+    "Ch'od": "Publication history Dave Cockrum created the Starjammers with the intent of having them star in their own series. However, when he submitted the concept for Marvel's two try-out series, Marvel Spotlight and Marvel Premiere, he was repeatedl",
+    "Lei Kung": "Lei Kung was portrayed by Hoon Lee in the Marvel Cinematic Universe (MCU) Netflix television series Iron Fist. Publication history"
+  },
+  "headings_sample": {
+    "Brian Braddock": [
+      "lead",
+      "publication history",
+      "fictional character biography",
+      "origins",
+      "early career as captain britain",
+      "jaspers' warp",
+      "post-warp and replacement",
+      "excalibur",
+      "new excalibur",
+      "captain britain and mi: 13",
+      "avengers tenure and revolutionary war",
+      "powers and abilities",
+      "reception",
+      "critical reception"
+    ],
+    "Quasar": [
+      "lead",
+      "fictional character biography",
+      "wendell vaughn",
+      "phyla-vell",
+      "richard rider",
+      "avril kincaid",
+      "powers and abilities",
+      "in other media",
+      "television",
+      "video games",
+      "references",
+      "external links",
+      "quasar at marvel wikia",
+      "grand comics database"
+    ],
+    "Spider-Man": [
+      "lead",
+      "publication history",
+      "creation and development",
+      "fictional character biography",
+      "personality and themes",
+      "powers, skills, and equipment",
+      "supporting cast",
+      "enemies",
+      "romantic interests",
+      "children",
+      "alternate versions of spider-man",
+      "reception and legacy",
+      "real-life comparisons",
+      "in other media"
+    ]
+  }
+}

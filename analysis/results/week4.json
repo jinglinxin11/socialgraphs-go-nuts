@@ -1,0 +1,394 @@
+{
+  "giant": [
+    1374,
+    9139
+  ],
+  "n_comms": {
+    "unweighted": [
+      9,
+      10,
+      9,
+      10,
+      10,
+      8,
+      8,
+      8,
+      10,
+      8
+    ],
+    "weighted": [
+      9,
+      7,
+      8,
+      9,
+      9,
+      10,
+      10,
+      8,
+      9,
+      10
+    ]
+  },
+  "Q": {
+    "unweighted": [
+      0.5,
+      0.508
+    ],
+    "weighted": [
+      0.546,
+      0.564
+    ]
+  },
+  "Q_null_unweighted": 0.228,
+  "stability_nmi_unweighted": 0.741,
+  "stability_nmi_weighted": 0.743,
+  "cross_nmi": 0.659,
+  "nmi_era_unweighted": 0.401,
+  "nmi_era_weighted": 0.39,
+  "big_communities": [
+    {
+      "top": "Immanuel Kant, Georg Wilhelm Friedrich Hegel, Friedrich Nietzsche",
+      "size": 262,
+      "main_era": "19th",
+      "share": 0.76
+    },
+    {
+      "top": "Gottfried Wilhelm Leibniz, Baruch Spinoza, René Descartes",
+      "size": 250,
+      "main_era": "18th",
+      "share": 0.38
+    },
+    {
+      "top": "Aristotle, Plato, Diogenes Laertius",
+      "size": 200,
+      "main_era": "BC",
+      "share": 0.55
+    },
+    {
+      "top": "Thomas Aquinas, Augustine of Hippo, Erasmus",
+      "size": 188,
+      "main_era": "11–14th",
+      "share": 0.62
+    },
+    {
+      "top": "Bertrand Russell, William James, Charles Sanders Peirce",
+      "size": 174,
+      "main_era": "19th",
+      "share": 0.94
+    },
+    {
+      "top": "Avicenna, Averroes, Maimonides",
+      "size": 114,
+      "main_era": "11–14th",
+      "share": 0.38
+    },
+    {
+      "top": "Madhvacharya, The Buddha, Adi Shankara",
+      "size": 99,
+      "main_era": "1–10th",
+      "share": 0.32
+    },
+    {
+      "top": "Confucius, Shen Buhai, Zhu Xi",
+      "size": 75,
+      "main_era": "BC",
+      "share": 0.43
+    },
+    {
+      "top": "Kazimierz Twardowski, Stanisław Leśniewski, Jan Łukasiewicz",
+      "size": 12,
+      "main_era": "19th",
+      "share": 0.67
+    }
+  ],
+  "stable_famous_share": 0.45,
+  "n_pairs": 11175,
+  "n_flipped_pairs_07": 54,
+  "top_flips": [
+    [
+      "John Locke",
+      "Kitarō Nishida",
+      0.9,
+      0.0
+    ],
+    [
+      "Isaac Newton",
+      "Kitarō Nishida",
+      0.9,
+      0.0
+    ],
+    [
+      "Jean-Jacques Rousseau",
+      "Kitarō Nishida",
+      0.9,
+      0.0
+    ],
+    [
+      "Voltaire",
+      "Kitarō Nishida",
+      0.9,
+      0.0
+    ],
+    [
+      "John Stuart Mill",
+      "Kitarō Nishida",
+      0.9,
+      0.0
+    ],
+    [
+      "Niccolò Machiavelli",
+      "Friedrich Hayek",
+      1.0,
+      0.1
+    ],
+    [
+      "Kitarō Nishida",
+      "Jeremy Bentham",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Denis Diderot",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Edmund Burke",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Victor Cousin",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Joseph Priestley",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Richard Price",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Hugo Grotius",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Thomas Jefferson",
+      0.9,
+      0.0
+    ],
+    [
+      "Kitarō Nishida",
+      "Montesquieu",
+      0.9,
+      0.0
+    ]
+  ],
+  "movers": [
+    {
+      "who": "Kitarō Nishida",
+      "score": 48.7,
+      "within": 0.43,
+      "unweighted_with": [
+        "Gottfried Wilhelm Leibniz",
+        "John Locke",
+        "René Descartes",
+        "David Hume"
+      ],
+      "weighted_with": [
+        "Immanuel Kant",
+        "Georg Wilhelm Friedrich Hegel",
+        "Friedrich Nietzsche",
+        "Karl Marx"
+      ]
+    },
+    {
+      "who": "Franciscus Patricius",
+      "score": 32.1,
+      "within": 0.21,
+      "unweighted_with": [
+        "Aristotle",
+        "Plato",
+        "Diogenes Laertius",
+        "Heraclitus"
+      ],
+      "weighted_with": [
+        "Aristotle",
+        "Plato",
+        "Diogenes Laertius",
+        "Heraclitus"
+      ]
+    },
+    {
+      "who": "Ptolemy",
+      "score": 31.0,
+      "within": 0.4,
+      "unweighted_with": [
+        "Aristotle",
+        "Plato",
+        "Diogenes Laertius",
+        "Heraclitus"
+      ],
+      "weighted_with": [
+        "Avicenna",
+        "Averroes",
+        "Maimonides",
+        "Al-Farabi"
+      ]
+    },
+    {
+      "who": "Samuel Taylor Coleridge",
+      "score": 28.5,
+      "within": 0.21,
+      "unweighted_with": [
+        "Gottfried Wilhelm Leibniz",
+        "John Locke",
+        "René Descartes",
+        "David Hume"
+      ],
+      "weighted_with": [
+        "Immanuel Kant",
+        "Georg Wilhelm Friedrich Hegel",
+        "Friedrich Nietzsche",
+        "Karl Marx"
+      ]
+    },
+    {
+      "who": "Emanuel Swedenborg",
+      "score": 28.2,
+      "within": 0.18,
+      "unweighted_with": [
+        "Thomas Aquinas",
+        "Augustine of Hippo",
+        "Erasmus",
+        "Roger Bacon"
+      ],
+      "weighted_with": [
+        "Immanuel Kant",
+        "Georg Wilhelm Friedrich Hegel",
+        "Friedrich Nietzsche",
+        "Karl Marx"
+      ]
+    },
+    {
+      "who": "Friedrich Hayek",
+      "score": 26.3,
+      "within": 0.38,
+      "unweighted_with": [
+        "Gottfried Wilhelm Leibniz",
+        "John Locke",
+        "René Descartes",
+        "David Hume"
+      ],
+      "weighted_with": [
+        "Bertrand Russell",
+        "William James",
+        "Charles Sanders Peirce",
+        "Henri Bergson"
+      ]
+    },
+    {
+      "who": "Giordano Bruno",
+      "score": 22.7,
+      "within": 0.22,
+      "unweighted_with": [
+        "Aristotle",
+        "Plato",
+        "Diogenes Laertius",
+        "Heraclitus"
+      ],
+      "weighted_with": [
+        "Avicenna",
+        "Averroes",
+        "Maimonides",
+        "Al-Farabi"
+      ]
+    },
+    {
+      "who": "Niccolò Machiavelli",
+      "score": 21.8,
+      "within": 0.33,
+      "unweighted_with": [
+        "Gottfried Wilhelm Leibniz",
+        "John Locke",
+        "René Descartes",
+        "David Hume"
+      ],
+      "weighted_with": [
+        "Gottfried Wilhelm Leibniz",
+        "Baruch Spinoza",
+        "René Descartes",
+        "John Locke"
+      ]
+    },
+    {
+      "who": "Wilhelm Wundt",
+      "score": 20.4,
+      "within": 0.37,
+      "unweighted_with": [
+        "Immanuel Kant",
+        "Georg Wilhelm Friedrich Hegel",
+        "Friedrich Nietzsche",
+        "Karl Marx"
+      ],
+      "weighted_with": [
+        "Bertrand Russell",
+        "William James",
+        "Charles Sanders Peirce",
+        "Henri Bergson"
+      ]
+    },
+    {
+      "who": "Hermann Lotze",
+      "score": 20.4,
+      "within": 0.37,
+      "unweighted_with": [
+        "Immanuel Kant",
+        "Georg Wilhelm Friedrich Hegel",
+        "Friedrich Nietzsche",
+        "Karl Marx"
+      ],
+      "weighted_with": [
+        "Bertrand Russell",
+        "William James",
+        "Charles Sanders Peirce",
+        "Henri Bergson"
+      ]
+    }
+  ],
+  "aristotle": {
+    "unweighted_with": [
+      "Plato",
+      "Diogenes Laertius",
+      "Heraclitus",
+      "Cicero",
+      "Pythagoras",
+      "Socrates",
+      "Plutarch",
+      "Epicurus"
+    ],
+    "weighted_with": [
+      "Plato",
+      "Diogenes Laertius",
+      "Heraclitus",
+      "Cicero",
+      "Pythagoras",
+      "Socrates",
+      "Plutarch",
+      "Epicurus"
+    ],
+    "jaccard": 0.54
+  }
+}

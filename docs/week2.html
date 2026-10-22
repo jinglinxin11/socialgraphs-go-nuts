@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What survives the shuffle? · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 2 · Models &amp; null models</p><h1>What survives the shuffle?</h1><p class="dek">We rewired the Marvel network 200 times while keeping every character&#x27;s degrees fixed. Reciprocity dies, triangles don&#x27;t, and one &quot;significant&quot; result turned out to be the same finding counted twice.</p><h2>The question</h2>
+<p>A number computed on a network means little on its own. Is 0.39 reciprocity a lot? Are 1,839 triangles a lot? The week-2 answer is <strong>compared to what?</strong>, and our "what" is a <strong>degree-preserving shuffle</strong>. We rewire the edges at random, but every character keeps exactly its in-degree and out-degree. Anything that survives the shuffle is explained by the degrees alone. Anything that dies needs a better explanation.</p>
+<h2>How we did it</h2>
+<p>200 shuffles with <code>networkx.directed_edge_swap</code>, at about 10 swaps per edge. On each one we measured five things and compared them with the real network.</p>
+<p><img alt="Real network vs 200 degree-preserving shuffles" src="assets/week2/shuffle_test.png" /></p>
+<table>
+<thead>
+<tr>
+<th>statistic</th>
+<th>real</th>
+<th>shuffles (mean ± sd)</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reciprocity</td>
+<td>0.392</td>
+<td>0.063 ± 0.007</td>
+<td><strong>+46</strong></td>
+</tr>
+<tr>
+<td>triangles (undirected)</td>
+<td>1,839</td>
+<td>1,880 ± 58</td>
+<td>−0.7</td>
+</tr>
+<tr>
+<td>transitivity</td>
+<td>0.183</td>
+<td>0.135 ± 0.004</td>
+<td>+12.5</td>
+</tr>
+<tr>
+<td>in–in assortativity</td>
+<td>−0.007</td>
+<td>−0.045 ± 0.015</td>
+<td>+2.5</td>
+</tr>
+<tr>
+<td>giant component share</td>
+<td>0.914</td>
+<td>0.914 (identical every time)</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h2>What it means</h2>
+<p><strong>Reciprocity is the big one.</strong> In the real network, 39% of links are returned. With the same degrees but random wiring, only 6% would be. Linking back is something editors actually do: if Venom's page mentions Eddie Brock, Eddie Brock's page almost certainly mentions Venom. Degrees cannot explain that.</p>
+<p><strong>Triangles survive.</strong> The real network has <em>the same number of triangles</em> as its shuffles. The hubs are so connected that triangles come for free.</p>
+<p><strong>But transitivity looks wildly significant (z = 12.5). How can that be, if the triangles are not?</strong> This puzzled us until we looked at the formula:</p>
+<blockquote>
+<p>transitivity = 3 × triangles / connected triples</p>
+</blockquote>
+<p>The triangles are the same, so the denominator must change, and it does. The shuffle destroys reciprocity. Pairs that used to link both ways (one undirected edge) become two separate one-way links to different characters (two undirected edges). A typical shuffle has about <strong>1,725 undirected edges</strong> against the real <strong>1,434</strong>, and about <strong>42,000 connected triples</strong> against the real <strong>30,231</strong>. Same triangles divided by more triples gives lower transitivity.</p>
+<p>So the "clustering" signal is mostly <strong>the reciprocity signal counted a second time</strong>. We would not have caught this if we had only looked at the z-scores.</p>
+<p><strong>Assortativity:</strong> the real network is less disassortative than its shuffles, but z = 2.5 is a modest effect. We would not build a story on it.</p>
+<h2>The friendship paradox among superheroes</h2>
+<p><img alt="Friendship paradox scatter" src="assets/week2/friendship_paradox.png" /></p>
+<p>For each of the 286 characters with at least one neighbour, we compared their degree with the average degree of their neighbours:</p>
+<ul>
+<li><strong>87%</strong> of characters have neighbours who are more popular than they are.</li>
+<li>The average character has k = 10.0, but the average <em>neighbour</em> has k = 22.1. That is ⟨k²⟩/⟨k⟩ at work: hubs are counted once for every friend they have.</li>
+<li>Only <strong>two characters are more popular than every single one of their neighbours: Spider-Man (106) and Radian (6).</strong> Radian makes the list because he is the hub of the Strikeforce: Morituri island from week 1. He is a big fish in a pond of nine.</li>
+<li>The "popular friend" behind the paradox is usually Spider-Man. He is the most-connected neighbour of 106 characters, followed by Hulk (33) and Wolverine (19).</li>
+</ul>
+<h2>A tool check we did not expect to need</h2>
+<p>The giant component share was <strong>identical in all 200 shuffles</strong>. We first read that as "connectivity survives the shuffle". Then we checked how NetworkX's <code>directed_edge_swap</code> works. It rewires along a three-edge path, so it can never move an edge from one component to another. The Strikeforce: Morituri island is rewired <em>inside itself</em>, but stays an island. That number tells us about the algorithm, not about Marvel. A configuration-model null would be the right tool for that question.</p>
+<h2>Limitation</h2>
+<p>All of this compares against <strong>one</strong> null model. Degree-preserving shuffles answer "is it more than degrees?". They do not tell us <em>why</em> editors reciprocate. Team rosters, family relations and "first appeared in X's comic" are all candidate explanations, and we have not separated them.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

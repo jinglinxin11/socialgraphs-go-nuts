@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can text build the Marvel network? · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 7 · NLP III</p><h1>Can text build the Marvel network?</h1><p class="dek">We rebuilt the network from name mentions alone and got 77% of the hyperlinks back. The edges that exist in only one network come down to umbrella pages, comic-book titles and names that are also English words.</p><h2>The question</h2>
+<p>The Marvel network was harvested from hyperlinks: an editor wrote <code>[[Hulk]]</code> into a page. But the text is right there too. <strong>If we ignored the links and only looked for characters <em>named</em> in each page, how close would we get to the hyperlink network?</strong> And where the two disagree, which one is wrong?</p>
+<h2>Building a mention network</h2>
+<p>For every character we built a list of <strong>aliases</strong>:</p>
+<ul>
+<li>the page title without its disambiguator (<code>Abomination (character)</code> → <em>Abomination</em>),</li>
+<li>the real name from the node blurb (<em>Emil Blonsky</em>),</li>
+<li>or, for titles like <em>Hawkeye (Kate Bishop)</em>, the name in the brackets.</li>
+</ul>
+<p>Then we drew an edge <strong>A → B whenever one of B's aliases appears in A's text.</strong></p>
+<p>Getting the aliases right took three rounds, and each round changed the results a lot:</p>
+<ol>
+<li><strong>Collisions.</strong> Our first version gave <em>Spider-Man (Marvel Mangaverse)</em> the alias "Spider-Man", so every mention of the real Spider-Man went to the manga version (142 phantom in-links). Fix: if two pages claim the same alias, it is ambiguous and goes to neither.</li>
+<li><strong>Hyphens.</strong> <code>\bHulk\b</code> matches inside "She-Hulk", because a hyphen counts as a word boundary. We switched to <code>(?&lt;![\w-])Hulk(?![\w-])</code>.</li>
+<li><strong>Ordinary words.</strong> <em>Storm</em>, <em>Venom</em>, <em>Blade</em>, <em>Bug</em> and <em>Solo</em> are also English words. We dropped any one-word alias that appears in lower case 5 or more times in the corpus. That costs us 13 characters (including Storm with 20 in-links and Venom with 17), which we cannot detect at all.</li>
+</ol>
+<h2>How close do we get?</h2>
+<p><img alt="Edge overlap and link probability by mention count" src="assets/week7/overlap.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hyperlink edges</td>
+<td>1,784</td>
+</tr>
+<tr>
+<td>mention edges</td>
+<td>1,843</td>
+</tr>
+<tr>
+<td>in both</td>
+<td><strong>1,369</strong></td>
+</tr>
+<tr>
+<td>hyperlinks recovered by mentions</td>
+<td><strong>77%</strong></td>
+</tr>
+<tr>
+<td>mentions that are also hyperlinks</td>
+<td><strong>74%</strong></td>
+</tr>
+<tr>
+<td>Jaccard overlap</td>
+<td>0.61</td>
+</tr>
+<tr>
+<td>correlation of in-degrees</td>
+<td>0.91</td>
+</tr>
+</tbody>
+</table>
+<p>So name mentions recover about three quarters of the network. A page that names someone once links them 70% of the time. A page that names someone <strong>8 or more times</strong> links them more than 90% of the time.</p>
+<h2>Talked about, but not linked</h2>
+<p><img alt="In-degree from mentions vs hyperlinks" src="assets/week7/mentions_vs_links.png" /></p>
+<p>The characters furthest above the diagonal show how the text and the links disagree:</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>hyperlink in-degree</th>
+<th>mention in-degree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hawkeye</td>
+<td>0</td>
+<td>43</td>
+</tr>
+<tr>
+<td>Captain Marvel</td>
+<td>9</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Spider-Woman</td>
+<td>10</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Thunderbolt</td>
+<td>0</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>All four are <strong>umbrella pages</strong>: <em>"Hawkeye is the name of several fictional characters"</em>. When Mockingbird's page says she married <em>Clint Barton/Hawkeye</em>, the link goes to <strong>Clint Barton's own article, which is not in the category</strong>. The mention is correct. The hyperlink is also correct. They just point to different entities. This is the same codename effect as Quasar in week 5, from the other side: there, links piled up on a name; here, mentions do.</p>
+<p>The grey dots on the x-axis (Storm, Venom, Blade…) are the reverse case: plenty of hyperlinks, zero mentions, because we had to give up on their aliases.</p>
+<h2>Mentions without links</h2>
+<p>We read the strongest text-only edges in context. They fall into three groups:</p>
+<ul>
+<li><strong>Umbrella pages</strong> (as above): Mockingbird → Hawkeye (45 mentions), Black Widow → Hawkeye, Scarlet Witch → Hawkeye.</li>
+<li><strong>Comic titles, not characters</strong>: Toro → Human Torch comes from <em>"Human Torch Comics #2"</em>; Agent X → Deadpool comes from <em>"the long-running Deadpool series"</em>; Spider-Woman (Jessica Drew) → Spider-Man comes from the film <em>Spider-Man: Across the Spider-Verse</em>.</li>
+<li><strong>A different entity with the same name</strong>: Captain Universe → Enigma is about the cosmic <em>"Enigma Force"</em>, not the character Enigma. Miracleman → Captain Marvel is about <strong>Fawcett's</strong> Captain Marvel, a different publisher's character that Miracleman was created to replace. A string match cannot tell them apart.</li>
+</ul>
+<h2>Links without mentions</h2>
+<p>Of the 415 hyperlinks that our mentions missed, <strong>104</strong> point to a character we could not give an alias. Most of the rest are characters referred to by a name we did not list, such as <em>Mayday</em> for Mayday Parker, or first names alone.</p>
+<h2>So, can text build the network?</h2>
+<p><strong>For the big picture, yes.</strong> In-degrees correlate at 0.91, and the same hubs come out on top. <strong>For individual edges, not without a lot of work</strong>, and that work (deciding which string refers to which entity) is exactly the work Wikipedia editors already did when they wrote the links. The mention network is most useful as a <em>check</em> on the hyperlinks: it found the Hawkeye and Captain Marvel umbrella pages, which are invisible if you only look at links.</p>
+<h2>Limitation</h2>
+<p>Real names come from parsing the brackets in the node blurbs, and that is noisy: Thena's alias came out as <em>"born Azura"</em> and Chase Stein's as <em>"also known as Talkback"</em>. A proper named-entity linker, or Wikidata aliases (we have the Wikidata IDs), would be the next step.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>

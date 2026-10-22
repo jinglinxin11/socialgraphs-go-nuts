@@ -1,0 +1,188 @@
+{
+  "n": 303,
+  "m_directed": 1784,
+  "m_undirected": 1434,
+  "reciprocal_pairs": 350,
+  "avg_k_undirected": 9.47,
+  "density": 0.0313,
+  "top_in": [
+    [
+      "Spider-Man",
+      106
+    ],
+    [
+      "Hulk",
+      64
+    ],
+    [
+      "Wolverine",
+      60
+    ],
+    [
+      "Doctor Strange",
+      50
+    ],
+    [
+      "Deadpool",
+      33
+    ],
+    [
+      "She-Hulk",
+      29
+    ],
+    [
+      "Scarlet Witch",
+      28
+    ],
+    [
+      "Black Panther",
+      27
+    ]
+  ],
+  "top_out": [
+    [
+      "Betsy Braddock",
+      28
+    ],
+    [
+      "Cloak and Dagger (characters)",
+      24
+    ],
+    [
+      "Adam Warlock",
+      22
+    ],
+    [
+      "Venom",
+      21
+    ],
+    [
+      "She-Hulk",
+      20
+    ],
+    [
+      "U.S. Agent",
+      20
+    ],
+    [
+      "Deadpool",
+      19
+    ],
+    [
+      "Rachel Summers",
+      19
+    ]
+  ],
+  "most_linked_vs_linking": [
+    [
+      "Spider-Man",
+      106,
+      9
+    ],
+    [
+      "Hulk",
+      64,
+      10
+    ],
+    [
+      "Wolverine",
+      60,
+      17
+    ],
+    [
+      "Doctor Strange",
+      50,
+      17
+    ],
+    [
+      "Quasar",
+      24,
+      3
+    ],
+    [
+      "Luke Cage",
+      25,
+      9
+    ],
+    [
+      "Hank Pym",
+      24,
+      8
+    ]
+  ],
+  "most_linking_vs_linked": [
+    [
+      "Betsy Braddock",
+      7,
+      28
+    ],
+    [
+      "Adam Warlock",
+      8,
+      22
+    ],
+    [
+      "Noh-Varr",
+      4,
+      18
+    ],
+    [
+      "U.S. Agent",
+      6,
+      20
+    ],
+    [
+      "Cloak and Dagger (characters)",
+      11,
+      24
+    ]
+  ],
+  "zero_in_count": 58,
+  "zero_in_positive_out": 41,
+  "giant_size": 277,
+  "islands": [
+    [
+      "Backhand",
+      "Blackthorn",
+      "Radian (Morituri)",
+      "Scaredycat",
+      "Scatterbrain (Morituri)",
+      "Shear",
+      "Snapdragon (Morituri)",
+      "Toxyn",
+      "Vyking"
+    ]
+  ],
+  "island_blurbs": {
+    "Snapdragon (Morituri)": "Snapdragon (Lorna Leigh Raeburn) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Scatterbrain (Morituri)": "Scatterbrain (Will Deguchi) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Backhand": "Backhand (Greg Mattingly) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Radian (Morituri)": "Radian (Louis Armanetti) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Blackthorn": "Blackthorn (Aline Pagrovna) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Shear": "Shear (Walther Feyzioglu) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Scaredycat": "Scaredycat (Pilar Lisieux) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Vyking": "Vyking (Harold Carl Everson) is a superhero appearing in American comic books published by Marvel Comics.",
+    "Toxyn": "Toxyn (Ruth Mastorakis) is a superhero appearing in American comic books published by Marvel Comics."
+  },
+  "isolates": [
+    "Baymax",
+    "Bird-Brain",
+    "Black Fox (Robert Paine)",
+    "Brain Drain",
+    "Breeze Barton",
+    "Captain Midlands",
+    "Charcoal",
+    "Father Time",
+    "Happy Sam Sawyer",
+    "Hellfire (J. T. Slade)",
+    "Illuminator",
+    "Miracleman",
+    "Ogre",
+    "Sean and Chris",
+    "Solarman",
+    "Super Rabbit",
+    "Yo-Yo Rodriguez"
+  ],
+  "spider_share_of_nodes_linking": 0.35,
+  "corr_in_out": 0.496
+}

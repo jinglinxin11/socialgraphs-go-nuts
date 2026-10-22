@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.claude/
+# course data: download from https://sunelehmann.com/socialgraphs2026-web/data/
+data/

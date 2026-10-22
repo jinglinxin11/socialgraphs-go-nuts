@@ -1,0 +1,500 @@
+{
+  "vocab": [
+    15388,
+    14910
+  ],
+  "name_tokens_removed": 625,
+  "median_cos_by_dist_all": {
+    "1": 0.144,
+    "2": 0.076,
+    "3": 0.046,
+    "4": 0.032,
+    "99": 0.031
+  },
+  "median_cos_by_dist_noname": {
+    "1": 0.136,
+    "2": 0.076,
+    "3": 0.048,
+    "4": 0.034,
+    "99": 0.033
+  },
+  "pairs_by_dist": {
+    "1": 1434,
+    "2": 13953,
+    "3": 18810,
+    "4": 3803,
+    "99": 7491
+  },
+  "far_close_all_words": [
+    [
+      "Blue Eagle",
+      "Moonglow",
+      "3",
+      0.285,
+      [
+        "squadron",
+        "supreme",
+        "overmind",
+        "modification",
+        "redeemers",
+        "behavior"
+      ]
+    ],
+    [
+      "Backhand",
+      "Blackthorn",
+      "3",
+      0.257,
+      [
+        "morituri",
+        "strikeforce",
+        "gillis",
+        "brent",
+        "effect",
+        "anderson"
+      ]
+    ],
+    [
+      "Backhand",
+      "Scatterbrain (Morituri)",
+      "4",
+      0.255,
+      [
+        "morituri",
+        "strikeforce",
+        "hordians",
+        "brent",
+        "gillis",
+        "anderson"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Shear",
+      "3",
+      0.247,
+      [
+        "morituri",
+        "strikeforce",
+        "horde",
+        "brent",
+        "gillis",
+        "anderson"
+      ]
+    ],
+    [
+      "Backhand",
+      "Scaredycat",
+      "3",
+      0.246,
+      [
+        "morituri",
+        "strikeforce",
+        "hordians",
+        "brent",
+        "gillis",
+        "anderson"
+      ]
+    ],
+    [
+      "Happy Sam Sawyer",
+      "Junior Juniper",
+      "no path",
+      0.244,
+      [
+        "sgt",
+        "howling",
+        "commandos",
+        "fury",
+        "ceiling",
+        "carter"
+      ]
+    ],
+    [
+      "Balder the Brave",
+      "Beta Ray Bill",
+      "3",
+      0.239,
+      [
+        "asgardians",
+        "odin",
+        "bill's",
+        "asgard",
+        "thor",
+        "balder"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Vyking",
+      "3",
+      0.233,
+      [
+        "morituri",
+        "hordians",
+        "strikeforce",
+        "horde",
+        "brent",
+        "gillis"
+      ]
+    ],
+    [
+      "Blackthorn",
+      "Scatterbrain (Morituri)",
+      "3",
+      0.223,
+      [
+        "morituri",
+        "strikeforce",
+        "gillis",
+        "brent",
+        "effect",
+        "recipients"
+      ]
+    ],
+    [
+      "Jean Grey",
+      "Mockingbird",
+      "3",
+      0.221,
+      [
+        "story's",
+        "busiek",
+        "conclusion",
+        "lance",
+        "she's",
+        "gladiator"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Snapdragon (Morituri)",
+      "3",
+      0.212,
+      [
+        "morituri",
+        "strikeforce",
+        "brent",
+        "gillis",
+        "anderson",
+        "horde"
+      ]
+    ],
+    [
+      "Backhand",
+      "Toxyn",
+      "3",
+      0.197,
+      [
+        "morituri",
+        "strikeforce",
+        "brent",
+        "gillis",
+        "anderson",
+        "horde"
+      ]
+    ]
+  ],
+  "far_close_no_names": [
+    [
+      "Blue Eagle",
+      "Moonglow",
+      "3",
+      0.307,
+      [
+        "squadron",
+        "supreme",
+        "overmind",
+        "modification",
+        "redeemers",
+        "behavior"
+      ]
+    ],
+    [
+      "Happy Sam Sawyer",
+      "Junior Juniper",
+      "no path",
+      0.263,
+      [
+        "sgt",
+        "howling",
+        "commandos",
+        "fury",
+        "ceiling",
+        "kirby"
+      ]
+    ],
+    [
+      "Backhand",
+      "Scatterbrain (Morituri)",
+      "4",
+      0.257,
+      [
+        "strikeforce",
+        "hordians",
+        "brent",
+        "gillis",
+        "anderson",
+        "effect"
+      ]
+    ],
+    [
+      "Backhand",
+      "Blackthorn",
+      "3",
+      0.252,
+      [
+        "strikeforce",
+        "gillis",
+        "brent",
+        "effect",
+        "anderson",
+        "process"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Shear",
+      "3",
+      0.24,
+      [
+        "strikeforce",
+        "horde",
+        "brent",
+        "gillis",
+        "anderson",
+        "recipients"
+      ]
+    ],
+    [
+      "Backhand",
+      "Scaredycat",
+      "3",
+      0.239,
+      [
+        "strikeforce",
+        "hordians",
+        "brent",
+        "gillis",
+        "anderson",
+        "process"
+      ]
+    ],
+    [
+      "Balder the Brave",
+      "Beta Ray Bill",
+      "3",
+      0.238,
+      [
+        "asgardians",
+        "odin",
+        "bill's",
+        "asgard",
+        "surtur",
+        "thor's"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Vyking",
+      "3",
+      0.228,
+      [
+        "hordians",
+        "strikeforce",
+        "horde",
+        "brent",
+        "anderson",
+        "gillis"
+      ]
+    ],
+    [
+      "Jean Grey",
+      "Mockingbird",
+      "3",
+      0.228,
+      [
+        "story's",
+        "busiek",
+        "conclusion",
+        "lance",
+        "she's",
+        "wein"
+      ]
+    ],
+    [
+      "Blackthorn",
+      "Scatterbrain (Morituri)",
+      "3",
+      0.211,
+      [
+        "strikeforce",
+        "gillis",
+        "brent",
+        "effect",
+        "recipients",
+        "anderson"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Snapdragon (Morituri)",
+      "3",
+      0.211,
+      [
+        "strikeforce",
+        "brent",
+        "gillis",
+        "anderson",
+        "horde",
+        "codename"
+      ]
+    ],
+    [
+      "Scarlet Witch",
+      "Shatterstar",
+      "3",
+      0.203,
+      [
+        "mutants",
+        "liefeld",
+        "krakoa",
+        "harkness",
+        "roma",
+        "energies"
+      ]
+    ]
+  ],
+  "most_name_driven": [
+    [
+      "Scaredycat",
+      "Scatterbrain (Morituri)",
+      0.443,
+      0.302,
+      "1",
+      [
+        "scatterbrain",
+        "morituri",
+        "scaredycat",
+        "strikeforce"
+      ]
+    ],
+    [
+      "Killpower",
+      "Motormouth",
+      0.405,
+      0.274,
+      "1",
+      [
+        "killpower",
+        "motormouth",
+        "mys-tech",
+        "moped"
+      ]
+    ],
+    [
+      "Nomad",
+      "Rikki Barnes",
+      0.268,
+      0.144,
+      "1",
+      [
+        "rikki",
+        "nomad",
+        "barnes",
+        "bucky"
+      ]
+    ],
+    [
+      "Guardian",
+      "Vindicator",
+      0.297,
+      0.189,
+      "1",
+      [
+        "vindicator",
+        "hudson",
+        "heather",
+        "guardian"
+      ]
+    ],
+    [
+      "Jack Monroe",
+      "Nomad",
+      0.261,
+      0.159,
+      "1",
+      [
+        "nomad",
+        "monroe",
+        "bucky",
+        "rogers"
+      ]
+    ],
+    [
+      "Bucky",
+      "Nomad",
+      0.255,
+      0.157,
+      "1",
+      [
+        "monroe",
+        "nomad",
+        "bucky",
+        "rikki"
+      ]
+    ],
+    [
+      "Scatterbrain (Morituri)",
+      "Toxyn",
+      0.288,
+      0.202,
+      "1",
+      [
+        "morituri",
+        "scatterbrain",
+        "strikeforce",
+        "toxyn"
+      ]
+    ],
+    [
+      "Scaredycat",
+      "Toxyn",
+      0.321,
+      0.241,
+      "1",
+      [
+        "morituri",
+        "scaredycat",
+        "strikeforce",
+        "toxyn"
+      ]
+    ],
+    [
+      "Hawkeye",
+      "Ronin",
+      0.271,
+      0.194,
+      "1",
+      [
+        "barton",
+        "clint",
+        "ronin",
+        "hawkeye"
+      ]
+    ],
+    [
+      "Union Jack (Joseph Chapman)",
+      "Union Jack",
+      0.479,
+      0.408,
+      "1",
+      [
+        "chapman",
+        "falsworth",
+        "pendragon",
+        "union"
+      ]
+    ]
+  ]
+}

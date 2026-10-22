@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Famous is not the same as chatty · Marvel, Mined</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Marvel, Mined</a>
+  <nav><a href="week1.html">W1</a> <a href="week2.html">W2</a> <a href="week3.html">W3</a> <a href="week4.html">W4</a> <a href="week5.html">W5</a> <a href="week6.html">W6</a> <a href="week7.html">W7</a></nav>
+</header>
+<main>
+<article><p class="kicker">Week 1 · Networks</p><h1>Famous is not the same as chatty</h1><p class="dek">In the Marvel network, the characters everyone links to and the characters who link to everyone are almost entirely different people. And 26 heroes are not connected to the rest at all.</p><h2>The question</h2>
+<p>Every edge in the Marvel network is a decision someone made. If page A links to page B, an editor of <strong>A</strong> decided that B was worth mentioning. That means the two ends of an edge mean different things:</p>
+<ul>
+<li><strong>In-degree</strong> is <em>conferred</em>. Other pages decide you matter.</li>
+<li><strong>Out-degree</strong> is <em>authored</em>. Your own page decides who matters to you.</li>
+</ul>
+<p>So we asked: <strong>are the famous characters (high in-degree) also the chatty ones (high out-degree)?</strong> And who is left out of the conversation entirely?</p>
+<h2>The network in numbers</h2>
+<p>We loaded the week-1 snapshot with every node added first, so the isolates survive:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>characters</td>
+<td>303</td>
+</tr>
+<tr>
+<td>directed links</td>
+<td>1,784</td>
+</tr>
+<tr>
+<td>undirected pairs</td>
+<td>1,434 (350 of them link both ways)</td>
+</tr>
+<tr>
+<td>average degree ⟨k⟩ = 2m/n</td>
+<td>9.47</td>
+</tr>
+<tr>
+<td>density</td>
+<td>0.031</td>
+</tr>
+</tbody>
+</table>
+<p>The 1,784 directed links collapse to 1,434 pairs because 350 pairs link in both directions, and each of those counts twice as directed edges but once as a pair.</p>
+<h2>Two distributions, two mechanisms</h2>
+<p><img alt="In- and out-degree distributions on log–log axes" src="assets/week1/degree_distributions.png" /></p>
+<p>The in-degree tail runs all the way to <strong>Spider-Man at 106</strong>, which means 35% of the whole network links to him. The out-degree tail stops at <strong>28</strong> (Betsy Braddock). This matches the in/out split above. An out-link has to be written into one article by hand, so there is a ceiling on how many a page will have. In-links are handed out by everyone else, and nothing stops them from piling up on one page.</p>
+<h2>Famous vs. chatty</h2>
+<p><img alt="In-degree against out-degree" src="assets/week1/in_vs_out.png" /></p>
+<p>The two degrees are only moderately correlated (r = 0.50). The outliers on each side are different kinds of character:</p>
+<table>
+<thead>
+<tr>
+<th>Linked to a lot, links out little</th>
+<th>in</th>
+<th>out</th>
+<th>Links out a lot, rarely linked</th>
+<th>in</th>
+<th>out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spider-Man</td>
+<td>106</td>
+<td>9</td>
+<td>Betsy Braddock</td>
+<td>7</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Hulk</td>
+<td>64</td>
+<td>10</td>
+<td>Cloak and Dagger</td>
+<td>11</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Wolverine</td>
+<td>60</td>
+<td>17</td>
+<td>Adam Warlock</td>
+<td>8</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Quasar</td>
+<td>24</td>
+<td>3</td>
+<td>U.S. Agent</td>
+<td>6</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Hank Pym</td>
+<td>24</td>
+<td>8</td>
+<td>Noh-Varr</td>
+<td>4</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What surprised us:</strong> Spider-Man's page is long (about 10,000 words), yet it links to only nine other characters in the category: Black Cat, Hulk, Mayday Parker, Scarlet Spider, Silk, Spider-Man Noir, Spider-UK, Spider-Woman (Gwen Stacy) and Venom. Almost all of them are <em>spin-offs of Spider-Man himself</em>. All nine link back to him. The most famous page in the network is mostly talking to its own family.</p>
+<p>Betsy Braddock goes the other way. Her page (about 12,800 words) runs through decades of X-Men team-ups and links 28 characters, including Cyclops, Jean Grey, Storm, Wolverine and her twin brother Brian. Only seven pages link back. Team-book characters seem to have long, crowded biographies that name everyone they ever fought alongside.</p>
+<p><strong>Quasar</strong> is odd (24 in, 3 out). We will come back to him in week 5.</p>
+<h2>Who is left out</h2>
+<p><img alt="The network with the island and isolates" src="assets/week1/network.png" /></p>
+<ul>
+<li><strong>277 characters (91%)</strong> sit in one giant connected component.</li>
+<li><strong>9 characters</strong> form a single island: Backhand, Blackthorn, Radian, Scaredycat, Scatterbrain, Shear, Snapdragon, Toxyn and Vyking. Every one of them has the same one-line blurb ("is a superhero appearing in American comic books published by Marvel Comics"). Their page titles give them away: they are the cast of <em>Strikeforce: Morituri</em>, a 1980s series. They link only to each other.</li>
+<li><strong>17 isolates</strong>, including Baymax, Miracleman and Yo-Yo Rodriguez, have no links in either direction.</li>
+<li><strong>58 characters have in-degree zero</strong>, and 41 of those still link out. They talk, but nobody in the category talks back.</li>
+</ul>
+<h2>What we checked</h2>
+<ul>
+<li>That the edge counts match the course page (303 / 1,784 / 1,434 / ⟨k⟩ ≈ 9.5). They do.</li>
+<li>That the agent's top-five lists match a hand count. We read Spider-Man's nine out-links straight off the edge list and checked them against his article.</li>
+</ul>
+<h2>Limitation</h2>
+<p>"Famous" here means famous <em>inside</em> one Wikipedia category. Characters like Iron Man, Captain America and Thor are not in <em>Category:Marvel Comics superheroes</em> in this snapshot, so every link to them is invisible. Spider-Man's 106 may partly reflect who happened to be filed in the category.</p></article>
+</main>
+<footer>Marvel, Mined · 02805 Social Graphs and Interactions · code and data in <code>analysis/</code></footer>
+</body>
+</html>
